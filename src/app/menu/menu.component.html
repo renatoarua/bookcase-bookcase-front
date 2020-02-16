@@ -1,0 +1,35 @@
+<bc-header>
+    <span (click)="sidenav.toggle()">
+        <i class="fas fa-bars"></i>
+    </span>
+</bc-header>
+
+<mat-sidenav-container class="menu-container" style="margin-top: 56px !important;">
+    <mat-sidenav #sidenav mode="push" disableClose>
+
+        <bc-content-menu> 
+            <bc-btn-menu
+                (click)="sidenav.toggle()"
+                [link]="['']"
+                name="bookcase"
+                classIcon="fas fa-home">
+            </bc-btn-menu>
+            <bc-btn-menu
+                (click)="sidenav.toggle()"
+                link="/book/add"
+                name="add book"
+                classIcon="fas fa-book">
+            </bc-btn-menu>
+        </bc-content-menu>
+
+        <div class="p-2 text-center" (click)="logout()">
+            <small>logout <i class="fas fa-sign-out-alt"></i></small>
+        </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    
+</mat-sidenav-container>

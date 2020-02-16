@@ -1,0 +1,58 @@
+<div class="container">
+    <form [formGroup]="bookForm" (submit)="saveBook()">
+        <div class="form-group text-center">
+
+            <div class="p-3" *ngIf="!preview; else previewImage">
+
+                <button type="button" (click)="fileInput.click()" class="btn btn-primary">
+                    <i class="fa fa-image fa-4x align-middle"></i>
+                </button>
+
+                <input 
+                    #fileInput 
+                    hidden 
+                    formControlName="bookImg64" 
+                    type="file" 
+                    accept="image/*"
+                    (change)="handleFile($event.target.files[0])">
+
+            </div>
+
+            <ng-template #previewImage>
+                <div class="p-3">
+                    <img [src]="preview" class="img-fluid" alt="..." style="max-height: 150px;">
+                </div>
+            </ng-template>
+
+
+            <div class="form-group">
+                <input formControlName="bookTitle" placeholder="Title" type="input" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <input formControlName="bookAuthor" placeholder="Author" type="input" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <input formControlName="bookPublished" placeholder="Published" type="date" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <input formControlName="bookPages" placeholder="Number pages" type="number" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <input formControlName="bookRate" placeholder="Rate" type="number" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <textarea formControlName="bookBrief" placeholder="Brief" class="form-control"></textarea>
+            </div>
+
+            <button [disabled]="bookForm.invalid" type="submit" class="btn btn-primary btn-block">
+                SAVE BOOK
+            </button>
+
+        </div>
+    </form>
+</div>

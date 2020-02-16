@@ -1,0 +1,21 @@
+<div class="fixed-top shadow-sm rounded-bottom">
+    <nav class="navbar navbar-light bg-white">
+
+        <a class="navbar-brand" [routerLink]="['']">BOOKCASE</a>
+
+        <!-- <div *ngIf="(user$ | async) as user; else login">
+            <i class="fa fa-user-circle mr-1"></i>
+            <a class="mr-1">renato</a>
+            <a>(Logout)</a>
+        </div> -->
+
+        <span *ngIf="!isLogado; else btnMenu" class="navbar-text">
+            <a [routerLink]="['']">Please, login!</a>
+        </span>
+
+        <ng-template #btnMenu>
+            <ng-content></ng-content>
+        </ng-template>
+
+    </nav>
+</div>

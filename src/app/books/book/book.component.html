@@ -1,0 +1,36 @@
+<!-- <img class="img-thumbnail" [src]="img">   -->
+
+<!-- <div class="card mb-3 p-1">
+    <div class="row no-gutters">
+        <div class="col-5">
+            <img [src]="img" class="img-fluid" alt="...">
+        </div>
+        <div class="col-7">
+            <div class="">
+                <h5 class="card-title"> {{ bookTitle }} </h5>
+                <p class="card-text small text-truncate">{{ bookBrief }}</p>
+                <p class="card-text"><small class="text-muted">{{ bookAuthor }}</small></p>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="pr-3 pl-3" >
+    <div class="card text-center" style="border: none !important">
+        <h5 class="" style="color: #646566;">{{ bookTitle }}</h5>
+        <div class="pl-3 pr-3 card-block ">
+            <div class="pb-2">
+                <img [src]="img" class="img-fluid" alt="..." style="max-height: 225px;">
+            </div>
+            <div class="">
+
+                <p class="card-text small ">
+                    {{ bookBrief | slice : 0 : 200 }}...
+                </p>
+                <p class="card-text"><small class="text-muted">{{ bookAuthor }}</small></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="sep-2" /> 

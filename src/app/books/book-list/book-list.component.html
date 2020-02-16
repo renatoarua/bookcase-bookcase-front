@@ -1,0 +1,9 @@
+<div class="pt-3">
+    <bc-book 
+        *ngFor="let book of books"
+        [img]="book.bookImg64"
+        [bookBrief]="book.bookBrief"
+        [bookAuthor]="book.bookAuthor"
+        [bookTitle]="book.bookTitle">
+    </bc-book>
+</div>
