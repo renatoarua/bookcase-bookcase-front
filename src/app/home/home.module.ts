@@ -21,8 +21,7 @@ import { SignupService } from './signup/signupService';
         ReactiveFormsModule,
         FormsModule,
         CommonModule,
-        VmessageModule,
-        FormsModule
+        VmessageModule
     ],
     providers: [
         SignupService
